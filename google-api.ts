@@ -1,6 +1,7 @@
 import axios from "axios"
 import { GoogleAuth } from "google-auth-library"
 import { TextGenerationResponse } from "./api-interfaces"
+import { SecretManagerServiceClient } from "@google-cloud/secret-manager"
 
 export async function getText(
   prompt: string
@@ -42,8 +43,29 @@ export async function getText(
         2
       ) as unknown as TextGenerationResponse
     )
+
     return response.data as TextGenerationResponse
   } catch (error) {
     console.error(error)
+  }
+}
+
+export async function getSecret(
+  secretName: string
+): Promise<string | undefined> {
+  new GoogleAuth()
+  const client = new SecretManagerServiceClient()
+  const name = `projects/448956474178/secrets/${secretName}/versions/latest`
+
+  try {
+    const request = await client.accessSecretVersion({ name })
+    const response: Uint8Array = request[0].payload?.data as Uint8Array
+    const decryptedResponse = Buffer.from(response).toString()
+
+    // console.log(decryptedResponse)
+    return decryptedResponse
+  } catch (error) {
+    console.log("Secret Not Found")
+    return undefined
   }
 }
