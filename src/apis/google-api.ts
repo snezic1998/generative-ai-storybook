@@ -1,9 +1,10 @@
 import axios from "axios"
 import { GoogleAuth } from "google-auth-library"
-import { TextGenerationResponse } from "./api-interfaces"
+import { TextGenerationResponse } from "../interfaces/api-interfaces"
 import { SecretManagerServiceClient } from "@google-cloud/secret-manager"
+import { Storage } from "@google-cloud/storage"
 
-export async function getText(
+export async function getGeneratedText(
   prompt: string
 ): Promise<TextGenerationResponse | undefined> {
   const auth = new GoogleAuth()
@@ -17,9 +18,9 @@ export async function getText(
     ],
     parameters: {
       temperature: 0.5,
-      maxOutputTokens: 100,
-      topK: 5,
-      topP: 0.5,
+      maxOutputTokens: 1024,
+      topK: 40,
+      topP: 0.8,
     },
   }
 
@@ -36,14 +37,6 @@ export async function getText(
   try {
     const response = await axios.request(options)
 
-    console.log(
-      JSON.stringify(
-        response.data,
-        null,
-        2
-      ) as unknown as TextGenerationResponse
-    )
-
     return response.data as TextGenerationResponse
   } catch (error) {
     console.error(error)
@@ -59,13 +52,31 @@ export async function getSecret(
 
   try {
     const request = await client.accessSecretVersion({ name })
+
     const response: Uint8Array = request[0].payload?.data as Uint8Array
     const decryptedResponse = Buffer.from(response).toString()
 
-    // console.log(decryptedResponse)
     return decryptedResponse
   } catch (error) {
     console.log("Secret Not Found")
+    return undefined
+  }
+}
+
+export async function getCloudStorage(
+  cloudUrl: string
+): Promise<string | undefined> {
+  new GoogleAuth()
+  const storage = new Storage()
+  const bucketName = "electric-rhino-402103-images"
+  const fileName = cloudUrl
+
+  try {
+    const [file] = await storage.bucket(bucketName).file(fileName).download()
+
+    return file.toString()
+  } catch (error) {
+    console.error(error)
     return undefined
   }
 }

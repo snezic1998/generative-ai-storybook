@@ -1,0 +1,40 @@
+{
+  "basePrompt": "Create a unique story based on the following prompts:",
+  "modifications": [
+    {
+      "length": "Length: Maximum 500 words",
+      "ageGroup": "Age Demography: 5-10 year olds",
+      "characters": "Characters: A human girl named Sophie and a dog named Max",
+      "setting": "Background Setting: A park in a city",
+      "additionalParameters": "Additional Parameters: The story must include a conflict between Sophie and Max. Additionally, the story must be self-contained, with no cliffhangers or sequels."
+    },
+    {
+      "length": "Length: Maximum 1000 words",
+      "ageGroup": "Age Demography: 5-10 year olds",
+      "characters": "Characters: A human girl named Sophie and a dog named Max",
+      "setting": "Background Setting: A park in a city",
+      "additionalParameters": "Additional Parameters: The story must include a conflict between Sophie and Max. Additionally, the story must be self-contained, with no cliffhangers or sequels."
+    },
+    {
+      "length": "Length: Maximum 500 words",
+      "ageGroup": "Age Demography: 8-10 year olds",
+      "characters": "Characters: A human girl named Sophie and a dog named Max",
+      "setting": "Background Setting: A park in a city",
+      "additionalParameters": "Additional Parameters: The story must include a conflict between Sophie and Max. Additionally, the story must be self-contained, with no cliffhangers or sequels."
+    },
+    {
+      "length": "Length: Maximum 1000 words",
+      "ageGroup": "Age Demography: 8-10 year olds",
+      "characters": "Characters: A human girl named Sophie and a dog named Max",
+      "setting": "Background Setting: A park in a city",
+      "additionalParameters": "Additional Parameters: The story must include a conflict between Sophie and Max. Additionally, the story must be self-contained, with no cliffhangers or sequels."
+    },
+    {
+      "length": "Length: Maximum 500 words",
+      "ageGroup": "Age Demography: 5-10 year olds",
+      "characters": "Characters: A human girl named Sophie and a dog named Max",
+      "setting": "Background Setting: A park in a city",
+      "additionalParameters": "Additional Parameters: The story must include a conflict between Sophie and Max. Additionally, the story must be self-contained, with no cliffhangers or sequels. Finally, the story must be written from a first-person perspective."
+    }
+  ]
+}

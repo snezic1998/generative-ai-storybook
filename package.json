@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@google-cloud/secret-manager": "^5.0.1",
+    "@google-cloud/storage": "^7.3.1",
     "@types/mysql": "^2.15.23",
     "axios": "^1.5.1",
     "dotenv": "^16.3.1",
