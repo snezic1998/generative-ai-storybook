@@ -2,39 +2,14 @@
   "basePrompt": "Create a unique story based on the following prompts:",
   "modifications": [
     {
-      "length": "Length: Maximum 500 words",
-      "ageGroup": "Age Demography: 5-10 year olds",
+      "length": "Length: Maximum 300 words",
+      "ageGroup": "Age Demography: adults",
       "characters": "Characters: A human girl named Sophie and a dog named Max",
       "setting": "Background Setting: A park in a city",
-      "additionalParameters": "Additional Parameters: The story must include a conflict between Sophie and Max. Additionally, the story must be self-contained, with no cliffhangers or sequels."
-    },
-    {
-      "length": "Length: Maximum 1000 words",
-      "ageGroup": "Age Demography: 5-10 year olds",
-      "characters": "Characters: A human girl named Sophie and a dog named Max",
-      "setting": "Background Setting: A park in a city",
-      "additionalParameters": "Additional Parameters: The story must include a conflict between Sophie and Max. Additionally, the story must be self-contained, with no cliffhangers or sequels."
-    },
-    {
-      "length": "Length: Maximum 500 words",
-      "ageGroup": "Age Demography: 8-10 year olds",
-      "characters": "Characters: A human girl named Sophie and a dog named Max",
-      "setting": "Background Setting: A park in a city",
-      "additionalParameters": "Additional Parameters: The story must include a conflict between Sophie and Max. Additionally, the story must be self-contained, with no cliffhangers or sequels."
-    },
-    {
-      "length": "Length: Maximum 1000 words",
-      "ageGroup": "Age Demography: 8-10 year olds",
-      "characters": "Characters: A human girl named Sophie and a dog named Max",
-      "setting": "Background Setting: A park in a city",
-      "additionalParameters": "Additional Parameters: The story must include a conflict between Sophie and Max. Additionally, the story must be self-contained, with no cliffhangers or sequels."
-    },
-    {
-      "length": "Length: Maximum 500 words",
-      "ageGroup": "Age Demography: 5-10 year olds",
-      "characters": "Characters: A human girl named Sophie and a dog named Max",
-      "setting": "Background Setting: A park in a city",
-      "additionalParameters": "Additional Parameters: The story must include a conflict between Sophie and Max. Additionally, the story must be self-contained, with no cliffhangers or sequels. Finally, the story must be written from a first-person perspective."
+      "language": "Language: English",
+      "perspective": "Perspective: Third person",
+      "additionalParameters": "Additional Rules: The story must include a conflict between Sophie and Max. The story should contain adult cuss words. The story should stick to real-live tropes (i.e. no talking animals, no magic, etc.) unless otherwise specified by the prompt",
+      "formatting": "Response Formatting: The story must be self-contained, with no cliffhangers or sequels. Paragraphs must be no longer than 5 sentences, but no shorter than 20 words. Characters talking are not to be considered new paragraphs. Additionally, new paragraphs should be separated using two newlines"
     }
   ]
 }

@@ -17,7 +17,7 @@ export async function getGeneratedText(
       },
     ],
     parameters: {
-      temperature: 0.5,
+      temperature: 0.7,
       maxOutputTokens: 1024,
       topK: 40,
       topP: 0.8,
@@ -78,5 +78,21 @@ export async function getCloudStorage(
   } catch (error) {
     console.error(error)
     return undefined
+  }
+}
+
+export async function sendToCloudStorage(
+  payload: string,
+  fileName: string
+): Promise<void> {
+  new GoogleAuth()
+  const storage = new Storage()
+  const bucketName = "my-bucket-name"
+
+  try {
+    await storage.bucket(bucketName).file(fileName).save(payload)
+    console.log(`File ${fileName} saved to bucket ${bucketName}`)
+  } catch (error) {
+    console.error(error)
   }
 }

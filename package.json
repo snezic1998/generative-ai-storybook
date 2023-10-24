@@ -9,6 +9,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@google-cloud/functions-framework": "^3.3.0",
     "@google-cloud/secret-manager": "^5.0.1",
     "@google-cloud/storage": "^7.3.1",
     "@types/mysql": "^2.15.23",
@@ -20,9 +21,10 @@
     "ts-node": "^10.9.1"
   },
   "scripts": {
-    "run": "ts-node index.ts",
+    "run": "ts-node src/index.ts",
     "test": "jest",
     "update": "rm -f package-lock.json && npm install",
-    "set-npm": "npm config set registry https://registry.npmjs.org/"
+    "set-npm": "npm config set registry https://registry.npmjs.org/",
+    "start": "ts-node src/server.ts"
   }
 }
